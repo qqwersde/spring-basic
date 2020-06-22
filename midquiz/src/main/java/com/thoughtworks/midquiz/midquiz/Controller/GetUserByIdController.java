@@ -10,11 +10,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
-public class GetUserByIDController {
+public class GetUserByIdController {
     
     private final GetUserByIdServeice getNameByIdServeice;
 
-    public GetUserByIDController(GetUserByIdServeice getNameByIdServeice) {
+    public GetUserByIdController(GetUserByIdServeice getNameByIdServeice) {
         this.getNameByIdServeice = getNameByIdServeice;
     }
 
