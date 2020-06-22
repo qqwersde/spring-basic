@@ -23,7 +23,6 @@ public class GetEducationByIdService {
     }
 
     public List<Education> getEducationById(long id) {
-        System.out.println(educationMap);
         return educationMap.get(id);
     }
 

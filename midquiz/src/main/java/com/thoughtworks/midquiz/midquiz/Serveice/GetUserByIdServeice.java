@@ -13,6 +13,10 @@ public class GetUserByIdServeice {
 
     private Map<Long, User> userMap = new HashMap<>();
 
+    public Map<Long, User> getUserMap() {
+        return userMap;
+    }
+
     public GetUserByIdServeice() {
         userMap.put((long)1, new User((long)1, "KAMIL", (long)24, "https://inews.gtimg.com/newsapp_match/0/3581582328/0",
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, non, dolorem, cumque distinctio " +

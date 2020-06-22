@@ -2,10 +2,12 @@ package com.thoughtworks.midquiz.midquiz.Controller;
 
 import com.thoughtworks.midquiz.midquiz.Model.User;
 import com.thoughtworks.midquiz.midquiz.Serveice.GetUserByIdServeice;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.thoughtworks.midquiz.midquiz.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.Min;
 import java.util.List;
 
 @RestController
@@ -26,21 +28,21 @@ public class GetUserByIdController {
 
     // GET /Users/1
     @GetMapping("/{id}")
-    public User getUserByIdRestful(@PathVariable("id") long id) {
+    public User getUserByIdRestful(@PathVariable("id") @Min((long)1)long id) {
         User User = getNameByIdServeice.getUserById(id);
-       /* if (User == null) {
-//      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
-            throw new UserNotFoundException("User not found");
-        }*/
+        if (User == null) {
+            throw new NotFoundException("User not found");
+        }
         return User;
     }
 
     // POST /Users
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createUser(@RequestBody User User) {
+    public void createUser(@RequestBody User user) {
+        long age = user.getAge();
         System.out.println("++successful create new user");
-        getNameByIdServeice.createUser(User);
+        getNameByIdServeice.createUser(user);
     }
     
 }
