@@ -24,7 +24,7 @@ public class GetUserByIDController {
         return getNameByIdServeice.getAllUsers();
     }
 
-    // GET /Users/3
+    // GET /Users/1
     @GetMapping("/{id}")
     public User getUserByIdRestful(@PathVariable("id") long id) {
         User User = getNameByIdServeice.getUserById(id);
@@ -36,9 +36,10 @@ public class GetUserByIDController {
     }
 
     // POST /Users
-    @PostMapping("/{id}/educations")
+    @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public void createUser(@RequestBody User User) {
+        System.out.println("++successful create new user");
         getNameByIdServeice.createUser(User);
     }
     
