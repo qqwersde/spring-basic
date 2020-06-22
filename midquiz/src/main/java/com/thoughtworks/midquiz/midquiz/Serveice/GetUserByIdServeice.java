@@ -28,12 +28,19 @@ public class GetUserByIdServeice {
         return new ArrayList<>(userMap.values());
     }
 
-    public void createUser(User car) {
-            userMap.put(car.getId(), car);
+    public User getUserById(long id) {
+        return userMap.get(id);
     }
 
-    public User getCarById(Integer id) {
-        return userMap.get(id);
+    public void createUser(User user) {
+        int id = (int)(1+Math.random()*(100-1+1));
+        long transId = (long)id;
+        while(userMap.containsKey(transId)){
+            id = (int)(1+Math.random()*(100-1+1));
+            transId = (long)id;
+        }
+        user.setId(transId);
+        userMap.put(transId,user);
     }
 
 }
