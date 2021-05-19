@@ -21,6 +21,9 @@ repositories {
 dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-web'
   implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+  implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.24'
+  implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
   compileOnly 'org.projectlombok:lombok'
   annotationProcessor 'org.projectlombok:lombok'
   testImplementation('org.springframework.boot:spring-boot-starter-test') {

@@ -1,10 +1,12 @@
 package com.thoughtworks.midquiz.midquiz.Controller;
 
 import com.thoughtworks.midquiz.midquiz.Model.User;
-import com.thoughtworks.midquiz.midquiz.Serveice.GetUserByIdServeice;
+import com.thoughtworks.midquiz.midquiz.Model.UserTest;
+import com.thoughtworks.midquiz.midquiz.Serveice.GetUserByIdService;
 import com.thoughtworks.midquiz.midquiz.exception.NotFoundException;
+import com.thoughtworks.midquiz.midquiz.repo.UserJpaRepo;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.Min;
@@ -12,13 +14,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
+@RequiredArgsConstructor
 public class GetUserByIdController {
     
-    private final GetUserByIdServeice getNameByIdServeice;
+    private final GetUserByIdService getNameByIdServeice;
 
-    public GetUserByIdController(GetUserByIdServeice getNameByIdServeice) {
-        this.getNameByIdServeice = getNameByIdServeice;
-    }
+    private final UserJpaRepo userJpaRepo;
 
     // GET /Users
     @GetMapping("/all")
@@ -40,9 +41,15 @@ public class GetUserByIdController {
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public void createUser(@RequestBody User user) {
-        long age = user.getAge();
-        System.out.println("++successful create new user");
         getNameByIdServeice.createUser(user);
     }
+
+    @PostMapping("/JPA")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createUser(@RequestBody UserTest user) {
+        userJpaRepo.save(user);
+    }
+
+
     
 }
