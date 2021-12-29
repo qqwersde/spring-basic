@@ -130,8 +130,8 @@ echo 1.dev_ca_common合并到dev_v1.0.0
 read -p "请选择：" input
 case $input in
 [1])
-    LOCAL_BRANCH=dev_ca_common
-    TARGET_BRANCH=dev_v1.0.0
+    LOCAL_BRANCH=master
+    TARGET_BRANCH=release_uat
 ;;
 [2])
     goto_exit "退出" -2
