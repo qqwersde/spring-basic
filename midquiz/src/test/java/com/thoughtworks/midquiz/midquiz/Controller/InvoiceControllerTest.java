@@ -1,7 +1,7 @@
 package com.thoughtworks.midquiz.midquiz.Controller;
 
 import com.alibaba.fastjson.JSON;
-import com.thoughtworks.midquiz.midquiz.Model.Invoice;
+import com.thoughtworks.midquiz.midquiz.entity.Invoice;
 import com.thoughtworks.midquiz.midquiz.exception.BaseException;
 import com.thoughtworks.midquiz.midquiz.response.InvoiceResponse;
 import org.junit.jupiter.api.Test;

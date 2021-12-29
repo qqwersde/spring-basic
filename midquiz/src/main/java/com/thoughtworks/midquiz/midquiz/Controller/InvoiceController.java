@@ -1,7 +1,7 @@
 package com.thoughtworks.midquiz.midquiz.Controller;
 
 
-import com.thoughtworks.midquiz.midquiz.Model.Invoice;
+import com.thoughtworks.midquiz.midquiz.entity.Invoice;
 import com.thoughtworks.midquiz.midquiz.Serveice.InvoiceService;
 import com.thoughtworks.midquiz.midquiz.response.InvoiceResponse;
 import org.springframework.web.bind.annotation.GetMapping;

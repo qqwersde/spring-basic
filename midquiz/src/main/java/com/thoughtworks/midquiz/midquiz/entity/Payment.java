@@ -1,4 +1,4 @@
-package com.thoughtworks.midquiz.midquiz.Model;
+package com.thoughtworks.midquiz.midquiz.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,12 +20,13 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Contract {
+public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String companyName;
+    private long id;
+    private String status;
+    private String paymentType;
     @CreatedDate
     private LocalDateTime createTime;
     @LastModifiedDate

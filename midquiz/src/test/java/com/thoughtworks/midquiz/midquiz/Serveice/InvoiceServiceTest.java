@@ -1,6 +1,6 @@
 package com.thoughtworks.midquiz.midquiz.Serveice;
 
-import com.thoughtworks.midquiz.midquiz.Model.Invoice;
+import com.thoughtworks.midquiz.midquiz.entity.Invoice;
 import com.thoughtworks.midquiz.midquiz.exception.BaseException;
 import com.thoughtworks.midquiz.midquiz.repo.ContractRepository;
 import com.thoughtworks.midquiz.midquiz.repo.InvoiceRepository;

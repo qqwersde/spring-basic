@@ -1,10 +1,9 @@
 package com.thoughtworks.midquiz.midquiz.Serveice;
 
-import com.thoughtworks.midquiz.midquiz.Model.Invoice;
+import com.thoughtworks.midquiz.midquiz.entity.Invoice;
 import com.thoughtworks.midquiz.midquiz.exception.BaseException;
 import com.thoughtworks.midquiz.midquiz.repo.ContractRepository;
 import com.thoughtworks.midquiz.midquiz.repo.InvoiceRepository;
-import com.thoughtworks.midquiz.midquiz.repo.PaymentRepository;
 import com.thoughtworks.midquiz.midquiz.response.InvoiceResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,8 +19,6 @@ public class InvoiceService {
     private final ContractRepository contractRepository;
 
     private final InvoiceRepository invoiceRepository;
-
-    private final PaymentRepository paymentRepository;
 
     public List<Invoice> getInvoiceList(Long btcId) {
         validContract(btcId);

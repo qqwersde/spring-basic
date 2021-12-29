@@ -1,6 +1,6 @@
 package com.thoughtworks.midquiz.midquiz.repo;
 
-import com.thoughtworks.midquiz.midquiz.Model.Invoice;
+import com.thoughtworks.midquiz.midquiz.entity.Invoice;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
