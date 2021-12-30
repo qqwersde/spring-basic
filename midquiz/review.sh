@@ -124,12 +124,13 @@ if [ -n "$(git status -s)" ];then
     goto_exit "有文件变更，请先处理，再执行" -2
 fi
 
-echo 1.dev_ca_common合并到dev_v1.0.0
+echo 1.master合并到release_uat
+echo 2.选择2退出
 read -p "请选择：" input
 case $input in
 [1])
-    LOCAL_BRANCH=master
-    TARGET_BRANCH=release_uat
+    LOCAL_BRANCH=$1
+    TARGET_BRANCH=$2
 ;;
 [2])
     goto_exit "退出" -2
