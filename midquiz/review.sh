@@ -129,8 +129,8 @@ echo 2.选择2退出
 read -p "请选择：" input
 case $input in
 [1])
-    LOCAL_BRANCH=master
-    TARGET_BRANCH=release_uat
+    LOCAL_BRANCH=$1
+    TARGET_BRANCH=$2
 ;;
 [2])
     goto_exit "退出" -2
