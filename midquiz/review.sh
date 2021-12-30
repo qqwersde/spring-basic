@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-RED_COLOR='\e[1;31m'  #红
-GREEN_COLOR='\e[1;32m' #绿
-YELOW_COLOR='\e[1;33m' #黄
-BLUE_COLOR='\e[1;34m'  #蓝
-PINK='\e[1;35m'      #粉红
-RES='\e[0m'
+RED_COLOR="\033[31m"  #红
+GREEN_COLOR='\033[32m' #绿
+YELOW_COLOR='\033[33m' #黄
+BLUE_COLOR='\033[34m'  #蓝
+PINK='033[37m'      #粉红
+RES='\033[0m'
 
 #退出程序
 function goto_exit()
