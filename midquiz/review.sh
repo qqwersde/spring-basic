@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 RED_COLOR='\E[1;31m'  #红
 GREEN_COLOR='\E[1;32m' #绿
