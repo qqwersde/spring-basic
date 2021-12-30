@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-RED_COLOR='\E[1;31m'  #红
-GREEN_COLOR='\E[1;32m' #绿
-YELOW_COLOR='\E[1;33m' #黄
-BLUE_COLOR='\E[1;34m'  #蓝
-PINK='\E[1;35m'      #粉红
-RES='\E[0m'
+RED_COLOR='\e[1;31m'  #红
+GREEN_COLOR='\e[1;32m' #绿
+YELOW_COLOR='\e[1;33m' #黄
+BLUE_COLOR='\e[1;34m'  #蓝
+PINK='\e[1;35m'      #粉红
+RES='\e[0m'
 
 #退出程序
 function goto_exit()
@@ -129,8 +129,8 @@ echo 2.选择2退出
 read -p "请选择：" input
 case $input in
 [1])
-    LOCAL_BRANCH=release_uat
-    TARGET_BRANCH=master
+    LOCAL_BRANCH=master
+    TARGET_BRANCH=release_uat
 ;;
 [2])
     goto_exit "退出" -2
