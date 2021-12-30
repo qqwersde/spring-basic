@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 RED_COLOR='\E[1;31m'  #红
 GREEN_COLOR='\E[1;32m' #绿
@@ -43,8 +43,6 @@ function last_status()
 function pull_latest_branch()
 {
     echo -e "切换并拉取${GREEN_COLOR} $1 ${RES} 分支最新代码"
-#     如果有两个人共同用一个分支开发，他刚更新的代码在测试上没有问题，过一段时间测试完成了，通知运维人员可以上预发布环境了，
-#     但是这个时候该功能分支的另外一个正好又提交了一个commit，这时会把最新的版本也合并了，
 #     说了半天，才说到重要，也就是每次合并之前都会有个pull --rebase操作
 #    if git checkout $1 && git pull --rebase
 #    then
