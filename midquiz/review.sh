@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 RED_COLOR='\E[1;31m'  #红
 GREEN_COLOR='\E[1;32m' #绿
@@ -129,8 +129,8 @@ echo 2.选择2退出
 read -p "请选择：" input
 case $input in
 [1])
-    LOCAL_BRANCH=$1
-    TARGET_BRANCH=$2
+    LOCAL_BRANCH=release_uat
+    TARGET_BRANCH=master
 ;;
 [2])
     goto_exit "退出" -2
